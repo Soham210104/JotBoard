@@ -19,12 +19,12 @@ const __dirname = path.resolve();
 //Middleware to parse JSON request bodies
 //just before sending response this tell to get access frrom req.body
 
+app.use(express.json());
 if(process.env.NODE_ENV !== "production"){
 //frontend url to be allowed to fetch data from different origin domain
   app.use(cors({
     origin: 'http://localhost:5173', // Adjust this to your frontend's origin
   }));
-  app.use(express.json());
   app.use(rateLimiter);
 }
 //use for middleware
