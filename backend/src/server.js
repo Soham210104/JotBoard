@@ -19,15 +19,17 @@ const __dirname = path.resolve();
 //Middleware to parse JSON request bodies
 //just before sending response this tell to get access frrom req.body
 
-app.use(express.json());
 if(process.env.NODE_ENV !== "production"){
-//frontend url to be allowed to fetch data from different origin domain
-  app.use(cors({
+  //frontend url to be allowed to fetch data from different origin domain
+  app.use(
+    cors({
     origin: 'http://localhost:5173', // Adjust this to your frontend's origin
-  }));
-  app.use(rateLimiter);
+  })
+);
 }
 //use for middleware
+app.use(express.json());
+app.use(rateLimiter);
 app.use("/api/notes" , notesRoute);
 
 if(process.env.NODE_ENV === "production"){
@@ -40,11 +42,6 @@ if(process.env.NODE_ENV === "production"){
     res.sendFile(path.join(__dirname,"../frontend","dist","index.html"));
   });
 }
-app.use((req,res,next)=>{
-  console.log("We just got a new request");
-  next();
-});
-
 connectDB().then(()=>{
   app.listen(PORT,() => {
   console.log(`Server is running on port ${PORT}`);
