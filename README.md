@@ -6,8 +6,14 @@ It’s fast, minimal, well-structured, and fun to use — perfect for learning, 
 ### LIVE - https://jotboard-gv7j.onrender.com/
 
 ## FRONTEND 
-<img width="1918" height="882" alt="Website" src="https://github.com/user-attachments/assets/ee5c692a-9c2b-4b7e-be09-1e9d887946fb" />  HomePage.
-<img width="932" height="720" alt="Screenshot 2025-12-24 124739" src="https://github.com/user-attachments/assets/29a4e830-50b0-4c6e-9635-c2c216cfa70f" />  Create Note.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ee5c692a-9c2b-4b7e-be09-1e9d887946fb" 
+       width="48%" alt="Homepage" />
+  &nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/29a4e830-50b0-4c6e-9635-c2c216cfa70f" 
+       width="48%" alt="Create Note" />
+</p>
+
 
 
 
