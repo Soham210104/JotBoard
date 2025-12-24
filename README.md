@@ -6,13 +6,23 @@ It’s fast, minimal, well-structured, and fun to use — perfect for learning, 
 ### LIVE - https://jotboard-gv7j.onrender.com/
 
 ## FRONTEND 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/ee5c692a-9c2b-4b7e-be09-1e9d887946fb" 
-       width="48%" alt="Homepage" />
-  &nbsp;&nbsp;
-  <img src="https://github.com/user-attachments/assets/29a4e830-50b0-4c6e-9635-c2c216cfa70f" 
-       width="48%" alt="Create Note" />
-</p>
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/ee5c692a-9c2b-4b7e-be09-1e9d887946fb"
+           width="100%" alt="Home Page" />
+      <br/>
+      <b>HOME PAGE</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/29a4e830-50b0-4c6e-9635-c2c216cfa70f"
+           width="100%" alt="Create Note" />
+      <br/>
+      <b>CREATE NOTE</b>
+    </td>
+  </tr>
+</table>
+>
 
 
 
