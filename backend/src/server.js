@@ -5,16 +5,22 @@ import cors from "cors";
 import path from "path";
 import notesRoute from "./routes/notesRoute.js";
 import { connectDB } from "./config/db.js";
-import rateLimiter from "./middleware/rateLimiter.js";
+// import rateLimiter from "./middleware/rateLimiter.js"; // Temporarily disabled
 
 
 dotenv.config();
 
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error);
+});
+
+process.on('unhandledRejection', (error) => {
+  console.error('Unhandled Rejection:', error);
+});
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 const __dirname = path.resolve();
-// connectDB();
 
 //Middleware to parse JSON request bodies
 //just before sending response this tell to get access frrom req.body
@@ -29,7 +35,11 @@ if(process.env.NODE_ENV !== "production"){
 }
 //use for middleware
 app.use(express.json());
-app.use(rateLimiter);
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
+// app.use(rateLimiter); // Temporarily disabled to test
 app.use("/api/notes" , notesRoute);
 
 if(process.env.NODE_ENV === "production"){
@@ -46,6 +56,9 @@ connectDB().then(()=>{
   app.listen(PORT,() => {
   console.log(`Server is running on port ${PORT}`);
 });
+}).catch((error) => {
+  console.error("Failed to start server:", error);
+  process.exit(1);
 });
 
 

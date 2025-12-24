@@ -4,12 +4,15 @@ import Note from '../models/Note.js';
 
 //as req is not used we can use _ instead of req
 export async function getAllNotes (_,res) {
+  console.log("getAllNotes called");
   try {
+    console.log("Fetching notes from database...");
     const notes = await Note.find().sort({createdAt: -1});//fetch all notes from the database and it will be newest first 1 means ascending and -1 means descending
+    console.log(`Found ${notes.length} notes`);
     res.status(200).json(notes);
   } catch (error) {
     console.error("Error fetching notes:", error);
-    res.status(500).json({ message: "Internal Server Error", error });
+    res.status(500).json({ message: "Internal Server Error", error: error.message });
   }
 }
 
