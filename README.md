@@ -3,8 +3,10 @@
 JotBoard is a simple yet powerful notes application built using the **MERN stack**.  
 It’s fast, minimal, well-structured, and fun to use — perfect for learning, portfolio display, or extending into a full productivity tool.
 
-### LIVE - https://jotboard-gv7j.onrender.com/ - Not Working currently
+
 ### UPDATED LIVE - https://jot-board.vercel.app/
+### LIVE - https://jotboard-gv7j.onrender.com/ - Not Working currently
+
 
 ## FRONTEND 
 <table align="center">
